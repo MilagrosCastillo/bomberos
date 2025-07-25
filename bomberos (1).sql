@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-07-2025 a las 17:54:00
+-- Tiempo de generación: 25-07-2025 a las 21:54:41
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -20,9 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bomberos`
 --
-CREATE DATABASE `bomberos`;
-
-use `bomberos`;
 
 -- --------------------------------------------------------
 
@@ -37,6 +34,7 @@ CREATE TABLE `dlaboral` (
   `jerarquia` varchar(30) NOT NULL,
   `cargo` varchar(30) NOT NULL,
   `estatus` varchar(30) NOT NULL,
+  `fecha` date NOT NULL,
   `estacion_servicio` varchar(30) NOT NULL,
   `seccion` varchar(30) NOT NULL,
   `rif` varchar(30) NOT NULL,
@@ -48,11 +46,11 @@ CREATE TABLE `dlaboral` (
 -- Volcado de datos para la tabla `dlaboral`
 --
 
-INSERT INTO `dlaboral` (`cedula`, `nivel_academico`, `tipo_personal`, `jerarquia`, `cargo`, `estatus`, `estacion_servicio`, `seccion`, `rif`, `serial_carnet`, `codigo_carnet`) VALUES
-(31040100, 'NIVEL_ACADEMICO', 'UNIFORMADO_OPERATIVO', 'MAYOR', 'ASESOR_JURIDICO', 'ACTIVO', 'ESTACION', 'SECCION', 'J31040100', '21254844', '21565648'),
-(30272820, 'NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'MAYOR', 'MAQUINISTA', 'JUBILADO', 'ESTACION', 'SECCION', 'J30272820', '00483684226', '00486259966'),
-(11200300, 'NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'SARGENTO 1ERO', 'ASESOR_JURIDICO', 'ACTIVO', 'ESTACION', 'SECCION', 'J11200300', '0012131566', '00055663333'),
-(22100300, 'NIVEL_ACADEMICO', 'UNIFORMADO_OPERATIVO', '1ER. TENIENTE', 'MEDICO', 'ACTIVO', 'ESTACION', 'SECCION', 'J22100300', '002256', '655654225');
+INSERT INTO `dlaboral` (`cedula`, `nivel_academico`, `tipo_personal`, `jerarquia`, `cargo`, `estatus`, `fecha`, `estacion_servicio`, `seccion`, `rif`, `serial_carnet`, `codigo_carnet`) VALUES
+(31040100, 'NIVEL_ACADEMICO', 'UNIFORMADO_OPERATIVO', 'MAYOR', 'ASESOR_JURIDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J31040100', '21254844', '21565648'),
+(30272820, 'NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'MAYOR', 'MAQUINISTA', 'JUBILADO', '0000-00-00', 'ESTACION', 'SECCION', 'J30272820', '00483684226', '00486259966'),
+(11200300, 'NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'SARGENTO 1ERO', 'ASESOR_JURIDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J11200300', '0012131566', '00055663333'),
+(22100300, 'NIVEL_ACADEMICO', 'UNIFORMADO_OPERATIVO', '1ER. TENIENTE', 'MEDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J22100300', '002256', '655654225');
 
 -- --------------------------------------------------------
 

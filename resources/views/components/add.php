@@ -120,7 +120,7 @@ select{
     <option value="civil_administrativo">CIVIL ADMINISTRATIVO</option>
     <option value="civil_operativo">CIVIL OPERATIVO</option>
 </select>
-				
+<div id="jerarquiaGroup" class="form-group hidden dynamic-field">
                 <label for="jerarquia" class="required">Jerarquía</label>
                 <select id="jerarquia" name="jerarquia">
                     <option disabled selected>SELECCIONE</option>
@@ -142,7 +142,7 @@ select{
                 </select>
             </div><br><br>
             
-            
+            <div id="cargoGroup" class="form-group hidden dynamic-field">
                 <label for="cargo2" class="required">Cargo</label>
                 <select id="cargo" name="cargo2">
                     <option disabled selected>SELECCIONES</option>
@@ -157,7 +157,6 @@ select{
 				<option value="estatus">SELECCIONE</option>
 				<option value="activo">ACTIVO</option>
 				<option value="jubilado">JUBILADO</option>
-				<option value="vacaciones">VACACIONES</option>
 			</select> 
 			<div id="campoFecha" class="hidde">
 				<label for="fecha">Ingrese la fecha:</label>
@@ -195,7 +194,7 @@ select{
 	<div class="resultado" id="resultado"></div>
 	<script>
         function mostrarCampoFecha() {
-            const estado = document.getElementById('estado').value;
+            const estado = document.getElementById('estatus').value;
             const campoFecha = document.getElementById('campoFecha');
 
             if (estado === 'activo') {
@@ -204,9 +203,6 @@ select{
             } else if (estado === 'jubilado') {
                 campoFecha.querySelector('label').innerText = 'Ingrese la fecha de jubilación:';
                 campoFecha.classList.remove('hidde');
-            } else if (estado === 'vacaciones') {
-                campoFecha.querySelector('label').innerText = 'Ingrese la fecha de vacaciones:';
-                campoFecha.classList.remove('hidde');
             } else {
                 campoFecha.classList.add('hidde');
             }
@@ -214,7 +210,7 @@ select{
     </script>
 	<script>
         document.addEventListener('DOMContentLoaded', function() {
-            const tipoPersonal = document.getElementById('tipoPersonal');
+            const tipoPersonal = document.getElementById('tipo_Personal');
             const jerarquiaGroup = document.getElementById('jerarquiaGroup');
             const cargoGroup = document.getElementById('cargoGroup');
             
@@ -241,7 +237,7 @@ select{
             document.getElementById('laboralForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                const tipoPersonalValue = document.getElementById('tipoPersonal').value;
+                const tipoPersonalValue = document.getElementById('tipo_Personal').value;
                 let isValid = true;
                 
                 if (!tipoPersonalValue) {
