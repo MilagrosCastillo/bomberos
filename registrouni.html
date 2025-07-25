@@ -1,0 +1,209 @@
+<html>
+<head>
+
+<title> REGISTRO DE PERSONAL UNIFORMADO</title>
+
+</head>
+
+<body>
+
+ <img src="cintillo.jpg" width="100%" height="20%">
+
+ 
+<center>
+  <h1> REGISTRO DEL PERSONAL JUBILADO</h1>
+</center>
+
+<form name="form-registro" action="registro.html" method="post">
+
+  <fieldset>
+      <legend>DATOS PERSONAL</legend>
+
+      <br>
+
+			<label for="nom">Nombres</label>
+			<input type="text" name="nom" size="20">
+
+			<label for= "ape">Apellidos</label>
+			<input type="text" name="ape" size="20">
+
+      <br>
+
+			<label for="cedula">Cedula</label>
+			<input type="tel" name="cedula" size="10">
+
+			<label for="fnto">Fecha Nacimiento</label>
+			<input type="date" name="fnto" size="10">
+
+			<label for="genero">Genero</label>
+      <select name="genero" id="">
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+      </select>
+
+      <br>
+
+			<label for="edoci">Estado Civil</label>
+			<select name="edoci" id="edoci">
+			  <option value="">SELECCIONE</option>
+			  <option value="casado">CASADO(A)</option>
+			  <option value="concubino">CONCUBINO(A)</option>
+			  <option value="soltero">SOLTERO(A)</option>
+			  <option value="viudo">VIUDO(A)</option>
+			</select>
+
+			<label for="nacionali">Nacionalidad</label>
+			<select name="nacionali" id="nacionali">
+			<option value="nacionali">SELECCIONE</option>
+			<option value="nacionali">VENEZOLANO(A)</option>
+			<option value="nacionali">EXTRANJERO</option>
+			</select>
+			<label for="tlf">Tlf</label>
+			<input type="text" name="tlf" size="10">
+			<label for="tlfca">Tlf Fijo</label>
+			<input type="tlfca" name="tlfca" size="10"><br><br>
+			<label for="email">Email</label>
+			<input type="text" name="email" size="15">
+			<label for="direc">Direccion</label>
+			<input type="text" name="direc" size="40"><br><br>
+			<label for="tallap">Talla de Pantalon</label>
+			<input type="text" name="tallap" size="5">
+			<label for="tallac">Talla de Camisa</label>
+			<input type="text" name="tallac" size="5">
+			<label for="tallaz">Talla de Zapato</label>
+			<input type="text" name="tallaz" size="5">
+			<label for="tallag">Talla de Gorra</label>
+			<input type="text" name="tallag" size="5">
+			<br><br>
+			</fieldset>
+			<br><br>
+			 <fieldset>
+			 <legend>DATOS LABORAL</legend><br>
+			<label for="nivelac">Nivel Academico</label>
+			<select name="nivelac" id="nivelac">
+			<option value="nivelac">SELECCIONE</option>
+			<option value="nivelac">PRIMARIA</option>
+			<option value="nivelac">BACHILLER</option>
+			<option value="nivelac">T.S.U</option>
+			<option value="nivelac">UNIVERSITARIO(A)</option>
+			<option value="nivelac">MAGISTER</option>
+			</select>
+			<label for="jerar">Jerarquia</label>
+			<select name="jerar" id="jerar">
+			<option value="cargo">SELECCION</option>
+			<option value="jerar">GENERAL</option>
+            <option value="jerar">CORONEL</option>
+            <option value="jerar">TENIENTE CORONEL</option>
+            <option value="jerar">MAYOR</option>
+            <option value="jerar">CAPITAN</option>
+            <option value="jerar">1ER TENIENTE</option>
+            <option value="jerar">TENIENTE</option>
+            <option value="jerar">SUB TENIENTE</option>
+            <option value="jerar">SARG. MAYOR</option>
+            <option value="jerar">SARG. PRIMERO</option>
+            <option value="jerar">SARG. SEGUNDO</option>
+            <option value="jerar">CABO 1ERO</option>
+            <option value="jerar">CABO 2DO</option>
+            <option value="jerar">DISTINGUIDO</option>
+            <option value="jerar">BOMBERO RAZO</option>
+			</select>
+			<label for="rif">RIF</label>
+			<input type="text" name="rif" size="8"><br><br>
+			<label for="scarpa">Serial del Carnet de la Patria</label>
+			<input type="text" name="scarpa" size="8">
+			<label for="ccarpa">Codigo del Carnet de la Patria</label>
+			<input type="text" name="ccarpa" size="8"><br><br>
+			<label for="fing">Fecha de Ingreso</label>
+			<input type="date" name="fing" size="10">
+			<label for="fing">Fecha de Jubilacion</label>
+			<input type="date" name="fing" size="10">
+			<br><br>
+          </fieldset><br><br>
+		  <fieldset>
+			<legend>DATOS MEDICOS</legend><br>
+			<label for="sangre">Grupo Sanguineo</label>
+			<select name="sangre" id="sangre">
+				<option value="sangre">SELECCIONE</option>
+				<option value="sangre">A+</option>
+				<option value="sangre">A-</option>
+				<option value="sangre">B+</option>
+			    <option value="sangre">B-</option>
+				<option value="sangre">AB+</option>
+				<option value="sangre">AB-</option>
+				<option value="sangre">O+</option>
+				<option value="sangre">O-</option>
+			</select>
+
+      <br><br>
+      <label for="disca">Posee Alguna Discapacidad</label>
+      <label for="disc">Si</label>
+      <input type="radio" name="disc" id="s" value="si" onclick="hideShow()">
+      <label for="disc">No</label>
+      <input type="radio" name="disc" id="n" value="no" aria-selected="true" onclick="hideShow()">
+		
+      <div class="espdisca" id="espdisca" style="display: none;">
+        <label for="espdiscatext">Especifique</label>
+        <input type="text" name="espdiscatext">
+      </div>
+			<br><br>
+			
+      <label for="patolo">Posee Alguna Enfermedad Patologica</label>
+      <label for="patolo">Si</label>
+			<input type="radio" id="si" name="patolo" value="si">
+      <label for="patolo">No</label>
+			<input type="radio" id="no" name="patolo" value="no">
+      <br><br>
+			
+      <div class="discpatolo">
+        <label for="espato">Especifique</label>
+        <input type="text" name="espato" id="espdiscpatolo">
+      </div>
+			<br><br>
+			
+      <label for="enfp">Posee Alguna Alergia</label>
+			SI<input type="radio" id="si" value="si">
+			NO<input type="radio" id="no" value="no"><br><br>
+
+
+		  </fieldset>
+		  <br><br>
+		  <fieldset>
+            <legend>CARGA FAMILIAR</legend><br>
+			<label for="nomesp">Nombre de la Esposo (a)</label>
+			<input type="text" name="nomesp" size="10">
+			<label for="lanthi">Numero Hijos Lactantes</label>
+			<input type="text" name="lanthi" size="5">
+			<label for="nhi">Numero de Hijos</label>
+			<input type="text" name="nhi" size="4"><br><br>
+			<label for="nomhi">Nombre y Apellido de Hijo(a)</label>
+			<input type="text" name="nomhi" size="10">
+			
+			<label for="fntohi">Fecha de Nacimiento de Hijo(a)</label>
+			<input type="date" name="fntohi" size="10">
+			<label for="edadhi">Edad de Hijo</label>
+			<input type="text" name="edadhi" size="5">
+			<label for="sexo">Sexo</label>
+			F<input type="radio" id="femenino" value="F">
+			M<input type="radio" id="masculino" value="M"><br><br>
+			<label for="disca">Posee Alguna Discapacidad</label>
+			SI<input type="radio" id="si" value="si">
+			NO<input type="radio" id="no" value="no"><br><br>
+			<label for="espdisca">Especifique</label>
+			<input type="text" name="esdisca" size="30"><br><br>
+			<label for="patolo">Posee Alguna Enfermedad Patologica</label>
+			SI<input type="radio" id="si" value="si">
+			NO<input type="radio" id="no" value="no"><br><br>
+			<label for="espato">Especifique</label>
+			<input type="text" name="espato" size="30"><br><br>
+			<label for="enfp">Posee Alguna Alergia</label>
+			SI<input type="radio" id="si" value="si">
+			NO<input type="radio" id="no" value="no"><br><br>
+			<label for="espato">Especifique</label>
+			<input type="text" name="espato" size="30"><br><br>
+			</fieldset><br><br>
+			<center><input type="submit" name="btn1" value="Guardar"></center>
+
+    </form><br>
+    <script src="./js/selectionresgistro.js"></script>
+</body>
+</html>

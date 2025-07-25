@@ -1,0 +1,329 @@
+/* Estilos de reinicio y base */
+/* * { */
+/*   box-sizing: border-box; */
+/*   margin: 0; */
+/*   padding: 0; */
+/*   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+/* } */
+
+/* body { */
+/*   background: linear-gradient(135deg, #ffffff, #d12c2c); */
+/*   min-height: 100vh; */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   align-items: center; */
+/*   color: #000; */
+/*   user-select: none; */
+/*   padding: 10px; */
+/* } */
+
+/* header { */
+/*   width: 100%; */
+/*   max-width: 600px; */
+/*   background: rgba(255 255 255 / 0.1); */
+/*   border-radius: 12px; */
+/*   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); */
+/*   margin-bottom: 16px; */
+/* } */
+
+/* nav { */
+/*   display: flex; */
+/*   justify-content: space-around; */
+/*   flex-wrap: wrap; */
+/*   padding: 10px 12px; */
+/* } */
+
+/* nav button { */
+/*   background: transparent; */
+/*   border: 2px solid #a81c1c; */
+/*   border-radius: 20px; */
+/*   padding: 10px 16px; */
+/*   font-weight: bold; */
+/*   font-size: 1rem; */
+/*   color: rgb(0, 0, 0); */
+/*   cursor: pointer; */
+/*   transition: all 0.3s ease; */
+/*   min-width: 120px; */
+/*   margin: 6px 5px; */
+/*   user-select: none; */
+/* } */
+
+/* nav button:hover, */
+/* nav button.active { */
+/*   background: #f76565; */
+/*   color: #fcfcfc; */
+/*   border-color: #ffffff; */
+/*   box-shadow: 0 0 10px #ffffff; */
+/* } */
+
+/* main { */
+/*   width: 100%; */
+/*   max-width: 600px; */
+/*   background: rgba(255 255 255 / 0.15); */
+/*   border-radius: 12px; */
+/*   padding: 20px; */
+/*   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
+/*   min-height: 300px; */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   align-items: center; */
+/*   justify-content: flex-start; */
+/*   user-select: text; */
+/* } */
+
+.hien {
+  display: none;
+}
+
+.content-header {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* Estilo de la pagina de certificado de corformidad*/
+#cert-conformidad-controls {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+#cert-conformidad-controls input[type="search"] {
+  flex-grow: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  min-width: 150px;
+}
+
+#cert-conformidad-controls input[type="search"]:focus {
+  box-shadow: 0 0 8px #f76565;
+}
+
+#cert-conformidad-controls button {
+  background-color: transparent;
+  border: 2px solid #a81c1c;
+  color: black;
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 130px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+#cert-conformidad-controls button:hover {
+  background-color: #f76565;
+}
+/* Estilo de la pagina de certificado de riesgo*/
+#cert-riesgo-controls {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+#cert-riesgo-controls input[type="search"] {
+  flex-grow: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  min-width: 150px;
+}
+
+#cert-riesgo-controls input[type="search"]:focus {
+  box-shadow: 0 0 8px #f76565;
+}
+
+#cert-riesgo-controls button {
+  background-color: transparent;
+  border: 2px solid #a81c1c;
+  color: black;
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 130px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+#cert-riesgo-controls button:hover {
+  background-color: #f76565;
+}
+/* Estilo y funciones de la pagina de certificado de calamidad*/
+#cert-calamidad-controls {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+#cert-calamidad-controls input[type="search"] {
+  flex-grow: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  min-width: 150px;
+}
+
+#cert-calamidad-controls input[type="search"]:focus {
+  box-shadow: 0 0 8px #f76565;
+}
+
+#cert-calamidad-controls button {
+  background-color: transparent;
+  border: 2px solid #a81c1c;
+  color: black;
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 130px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+#cert-calamidad-controls button:hover {
+  background-color: #f76565;
+}
+/* Estilo y funciones de la pagina de reportes de investigacion*/
+#rept-investigacion-controls {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+#rept-investigacion-controls input[type="search"] {
+  flex-grow: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  min-width: 150px;
+}
+
+#rept-investigacion-controls input[type="search"]:focus {
+  box-shadow: 0 0 8px #f76565;
+}
+
+#rept-investigacion-controls button {
+  background-color: transparent;
+  border: 2px solid #a81c1c;
+  color: black;
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 130px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+#rept-investigacion-controls button:hover {
+  background-color: #f76565;
+}
+/* estilo de la pagina de iforme de inspeccion*/
+#cert-inspeccion-controls {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+#cert-inspeccion-controls input[type="search"] {
+  flex-grow: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  min-width: 150px;
+}
+
+#cert-inspeccion-controls input[type="search"]:focus {
+  box-shadow: 0 0 8px #f76565;
+}
+
+#cert-inspeccion-controls button {
+  background-color: transparent;
+  border: 2px solid #a81c1c;
+  color: black;
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 130px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+#cert-riesgo-inspeccion button:hover {
+  background-color: #f76565;
+}
+/* Mobile responsiveness */
+@media (max-width: 400px) {
+  nav button {
+    min-width: 100px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  #cert-conformidad-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #cert-conformidad-controls button {
+    width: 100%;
+    min-width: unset;
+  }
+
+  #cert-conformidad-controls input[type="search"] {
+    width: 100%;
+    min-width: unset;
+    border: 1px solid;
+  }
+}

@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  /* URL de la imagen de fondo */
+  background-image: url('../../public/img/fondo_bomberos.webp'); /* Cambia 'fondo.jpg' por la ruta de tu imagen */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+  margin: 0; /* Elimina el margen por defecto del body */
+  color: black; /* Cambia el color del texto para mejor contraste */
+}
+.campo-adicional {
+  display: none; /* Ocultar por defecto */
+  margin-top: 10px;
+}
+.infcenter {
+  margin: 30;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  background-color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.content {
+  flex: 1; /* Esto permite que el contenido ocupe el espacio disponible */
+  padding: 20px;
+}
+
+footer {
+  background-color: rgba(240, 45, 45, 0.521);
+  color: black;
+  text-align: center;
+  padding: 7px 0;
+  /* backdrop-filter: blur(7px); */
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.socials {
+  list-style-type: none;
+  padding: 0;
+}
+
+.socials li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.socials a {
+  color: black;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+fieldset{
+    border: 1px solid;
+    border-color: #000;
+    border-radius: 7px;
+    padding: 7px 14px;
+    backdrop-filter: blur(7px);
+}
+#sangre{
+    border: 1px solid;
+    padding: 3px 7px;
+    border-radius: 7px;
+}
+input[type="text"]{
+    border: 1px solid;
+    border-radius: 7px;
+    padding: 1px 7px;
+    width: 100px;
+}
+

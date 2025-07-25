@@ -1,0 +1,68 @@
+:root{
+	--fondo: #171717;
+	--menu: #ff0000;
+}
+
+
+
+
+body{
+	color: #ffff;
+	background-color: var(--fondo);
+	margin: unset;
+	font-family: sans-serif;
+}
+.me-co{
+	background-color: var(--menu);
+}
+.menu{
+	margin-left: 50%;
+}
+.me-menu{
+	font-family: sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+	cursor: pointer;
+	overflow: visible;
+	list-style: none;
+	padding:0;
+	width: 100%;
+	max-width: 100%;
+}
+.misi{
+	font-family: sans-serif;
+	line-height: 170%;
+	margin-left: 7%;
+	margin-right: 7%;
+}
+.misi p{
+	margin-top: 7%;
+}
+.visi{
+	font-family: sans-serif;
+	line-height: 170%;
+	margin-left: 7%;
+	margin-right: 7%;
+}
+.visi p{
+	margin-top: 7%;
+}
+.imagen{
+	grid-area: imagen;
+}
+.imagen3{
+	vertical-align: middle;
+	width: 488px;
+	display:block;
+	margin: auto;
+	padding: 15px;
+}
+.fixed-image {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 100px;
+	height: auto;
+	border: 2px solid #ddd;
+	border-radius: 4px;
+}

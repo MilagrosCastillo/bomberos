@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  /* URL de la imagen de fondo */
+  background-image: url('../../public/img/himno.png'); /* Cambia 'fondo.jpg' por la ruta de tu imagen */
+  background-size: auto; /* Hace que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+  margin: 0; /* Elimina el margen por defecto del body */
+  color: black; /* Cambia el color del texto para mejor contraste */
+}
+

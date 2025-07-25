@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Formulario de Carga Familiar</title>
+<link rel="stylesheet" href="./style/piedepagina.css">
+<style>
+  /* Restablecer y estilo basico */
+  * {
+    box-sizing: border-box;
+  }
+  .imagen-fondo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f8fa;
+    margin: 0; padding: 20px;
+    color: #000000;  /* Cambia el color del texto para mejor contraste */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+      /* URL de la imagen de fondo */
+      background-image: url('./img/Imagen7.png'); /* Cambia 'fondo.jpg' por la ruta de tu imagen */
+            background-size: cover; /* Hace que la imagen cubra todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+            
+  }
+
+  .container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(8, 8, 8, 0.07);
+    overflow-y: auto;
+    max-height: 600px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1.8px solid #cbd5e0;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="date"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #000000;
+    outline: none;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 16px;
+  }
+  .radio-group label {
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .radio-group input[type="radio"] {
+    margin-right: 6px;
+    cursor: pointer;
+  }
+
+  .small-text {
+    font-size: 0.875rem;
+    color: #000000;
+  }
+
+  .child-form {
+    border: 1.5px solid #ffffff;
+    border-radius: 10px;
+    padding: 15px 15px 10px;
+    margin-bottom: 20px;
+    background: #f7f1f1;
+  }
+  .child-form h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #000000;
+  }
+
+  /* Ajustes responsivos */
+  @media (max-width: 400px) {
+    body {
+      padding: 15px 10px;
+    }
+    .container {
+      max-width: 100%;
+      padding: 15px 15px;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>Formulario de Carga Familiar</h1>
+<div class="imagen-fondo">
+  <form id="formCargaFamiliar" novalidate>
+    <fieldset>
+    <fieldset>
+      <legend><label>¿Tiene carga familiar?</label></legend>
+      <div class="radio-group" role="radiogroup" aria-labelledby="cargaFamiliarLabel">
+        <label><input type="radio" name="tieneCarga" value="no" required> No</label>
+        <label><input type="radio" name="tieneCarga" value="si"> Sí</label>
+      </div>
+    </fieldset>
+
+    <div id="hijosSection" style="display:none;">
+        <label for="nomesp">Nombre del Esposo (a)</label>
+    <input type="text" name="nomesp" size="10">
+    <label for="cedesp">Cedula del Esposo (a)</label>
+    <input type="text" name="cedesposa" size="10">
+    <legend>Tiene hijos lactantes</legend> 
+            <label for="siEsposa">Sí</label>
+            <input type="radio" id="siEsposa" name="tieneEsposa" value="si" onclick="mostrarFormularioAdicional()"> 
+            <label for="noEsposa">No</label>
+            <input type="radio" id="noEsposa" name="tieneEsposa" value="no" onclick="ocultarFormularioAdicional()"> 
+            <div class="campo-adicionales" id="formularioAdicional">
+
+
+                <label for="edadEsposa">Numero Hijos Lactantes</label>
+                <input type="number" id="edadEsposa" name="edadEsposa"><br><br>
+    
+                
+            </div>
+      <label for="numHijos">¿Cuántos hijos tiene?</label>
+      <select id="numHijos" name="numHijos" aria-describedby="numHijosDesc" required>
+        <option value="" disabled selected>Seleccione</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <small id="numHijosDesc" class="small-text">Seleccione el número de hijos para mostrar los formularios correspondientes.</small>
+    </div>
+
+    <div id="childrenForms"></div>
+
+    <button type="submit" style="display:none; margin-top:10px; background:#e24141; color:#fff; border:none; padding:10px 20px; border-radius:8px; font-weight:700; font-size:1rem; cursor:pointer;">Enviar</button>
+  </form>
+</div>
+
+<script>
+  const tieneCargaRadios = document.querySelectorAll('input[name="tieneCarga"]');
+  const hijosSection = document.getElementById('hijosSection');
+  const numHijosSelect = document.getElementById('numHijos');
+  const childrenFormsContainer = document.getElementById('childrenForms');
+  const form = document.getElementById('formCargaFamiliar');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  // Mostrar/ocultar hijosSeccion basada en seleccion de carga familiar
+  tieneCargaRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.value === 'si' && radio.checked) {
+        hijosSection.style.display = 'block';
+        submitButton.style.display = 'none';
+        childrenFormsContainer.innerHTML = '';
+        numHijosSelect.value = '';
+      } else if (radio.value === 'no' && radio.checked) {
+        hijosSection.style.display = 'none';
+        childrenFormsContainer.innerHTML = '';
+        submitButton.style.display = 'block';
+      }
+    });
+  });
+
+  // Cuando cambia el numero de hijos, genere formularios de hijos segun corresponda
+  numHijosSelect.addEventListener('change', () => {
+    const count = Number(numHijosSelect.value);
+    childrenFormsContainer.innerHTML = '';
+    if (count > 0) {
+      // Generar formularios secundarios
+      for (let i = 1; i <= count; i++) {
+        childrenFormsContainer.appendChild(createChildForm(i));
+      }
+      submitButton.style.display = 'block';
+    } else {
+      submitButton.style.display = 'none';
+    }
+  });
+
+  function createChildForm(index) {
+    const div = document.createElement('div');
+    div.className = 'child-form';
+    div.setAttribute('aria-label', `Formulario del hijo número ${index}`);
+
+    div.innerHTML = `
+
+      <h3>Hijo ${index}</h3>
+
+      <label for="nombre${index}">Nombres y Apellido:</label>
+      <input type="text" id="nombre${index}" name="nombre${index}" required placeholder="Ej: Juan Perez" autocomplete="off" />
+
+      <label for="cedula${index}">Cedula:</label>
+      <input type="text" id="cedula${index}" name="cedula${index}" required pattern="\\d{6,15}" title="Ingrese entre 6 y 15 dígitos" placeholder="Ej: 123456789" autocomplete="off" />
+
+      <label for="fechaNacimiento${index}">Fecha de nacimiento:</label>
+      <input type="date" id="fechaNacimiento${index}" name="fechaNacimiento${index}" required max="${new Date().toISOString().split('T')[0]}" />
+
+      <label for="sexo${index}">Sexo:</label>
+      <select id="sexo${index}" name="sexo${index}" required>
+        <option value="" disabled selected>Seleccione</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+      <label for="sangre ${index}">Grupo Sanguineo</label>
+			<select id="sangre${index}" name="sangre" id="sangre">
+				<option value="sangre">SELECCIONE</option>
+				<option value="sangre">A+</option>
+				<option value="sangre">A-</option>
+				<option value="sangre">B+</option>
+			    <option value="sangre">B-</option>
+				<option value="sangre">AB+</option>
+				<option value="sangre">AB-</option>
+				<option value="sangre">O+</option>
+				<option value="sangre">O-</option>
+			</select>
+
+      <label>¿Posee alguna enfermedad patológica?</label>
+      <div class="radio-group" aria-labelledby="enfermedadPatologicaLabel${index}">
+        <label><input type="radio" name="enfermedadPatologica${index}" value="no" required checked> No</label>
+        <label><input type="radio" name="enfermedadPatologica${index}" value="si"> Sí</label>
+      </div>
+      <textarea id="detalleEnfermedad${index}" name="detalleEnfermedad${index}" placeholder="Especifique la enfermedad patológica" style="display:none;" rows="2" maxlength="250"></textarea>
+
+      <label>¿Posee alguna discapacidad?</label>
+      <div class="radio-group" aria-labelledby="discapacidadLabel${index}">
+        <label><input type="radio" name="discapacidad${index}" value="no" required checked> No</label>
+        <label><input type="radio" name="discapacidad${index}" value="si"> Sí</label>
+      </div>
+      <textarea id="detalleDiscapacidad${index}" name="detalleDiscapacidad${index}" placeholder="Especifique la discapacidad" style="display:none;" rows="2" maxlength="250"></textarea>
+    `;
+
+    // Agregar oyentes de eventos para radios de enfermedad patologica
+    const enfermedadRadios = div.querySelectorAll(`input[name="enfermedadPatologica${index}"]`);
+    const detalleEnfermedad = div.querySelector(`#detalleEnfermedad${index}`);
+    enfermedadRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radio.value === 'si' && radio.checked) {
+          detalleEnfermedad.style.display = 'block';
+          detalleEnfermedad.required = true;
+        } else if (radio.value === 'no' && radio.checked) {
+          detalleEnfermedad.style.display = 'none';
+          detalleEnfermedad.value = '';
+          detalleEnfermedad.required = false;
+        }
+      });
+    });
+
+    // Agregar oyentes de eventos para radios de discapacidad
+    const discapacidadRadios = div.querySelectorAll(`input[name="discapacidad${index}"]`);
+    const detalleDiscapacidad = div.querySelector(`#detalleDiscapacidad${index}`);
+    discapacidadRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radio.value === 'si' && radio.checked) {
+          detalleDiscapacidad.style.display = 'block';
+          detalleDiscapacidad.required = true;
+        } else if (radio.value === 'no' && radio.checked) {
+          detalleDiscapacidad.style.display = 'none';
+          detalleDiscapacidad.value = '';
+          detalleDiscapacidad.required = false;
+        }
+      });
+    });
+
+    return div;
+  }
+
+  // Controlador de envio de formularios
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!form.reportValidity()) {
+      // Si el formulario no es valido, el navegador se centrara en el primer campo no valido.
+      return;
+    }
+
+    // Recopilar datos del formulario para mostrar un resumen o procesarlo mas a fondo
+    const tieneCarga = form.tieneCarga.value;
+    if(tieneCarga === 'no') {
+      alert('Formulario enviado: No tiene carga familiar.');
+      form.reset();
+      hijosSection.style.display = 'none';
+      childrenFormsContainer.innerHTML = '';
+      submitButton.style.display = 'none';
+      return;
+    }
+
+    const numHijos = Number(form.numHijos.value);
+    if (!numHijos || numHijos <= 0) {
+      alert('Por favor seleccione la cantidad de hijos.');
+      numHijosSelect.focus();
+      return;
+    }
+
+    const hijosData = [];
+    for (let i=1; i<=numHijos; i++) {
+      const hijo = {
+        nombre: form[`nombre${i}`].value.trim(),
+        cedula: form[`cedula${i}`].value.trim(),
+        fechaNacimiento: form[`fechaNacimiento${i}`].value,
+        sexo: form[`sexo${i}`].value,
+        enfermedadPatologica: form[`enfermedadPatologica${i}`].value,
+        detalleEnfermedad: form[`detalleEnfermedad${i}`]?.value.trim() ?? '',
+        discapacidad: form[`discapacidad${i}`].value,
+        detalleDiscapacidad: form[`detalleDiscapacidad${i}`]?.value.trim() ?? ''
+      };
+      hijosData.push(hijo);
+    }
+
+    // Para demostracion, simplemente muestre los datos recopilados como JSON
+    alert("Formulario enviado con éxito.\n\nDatos:\n" + JSON.stringify({ tieneCarga, numHijos, hijosData }, null, 2));
+
+    // Restablecer formulario para nueva entrada
+    form.reset();
+    hijosSection.style.display = 'none';
+    childrenFormsContainer.innerHTML = '';
+    submitButton.style.display = 'none';
+  });
+
+</script>
+<script>
+    function mostrarFormularioAdicional() {
+document.getElementById('formularioAdicional').style.display = 'block'; // Mostrar formulario adicional
+}
+
+function ocultarFormularioAdicional() {
+document.getElementById('formularioAdicional').style.display = 'none'; // Ocultar formulario adicional
+// Limpiar los campos del formulario adicional si se oculta
+
+document.getElementById('edadEsposa').value = '';
+
+}
+</script>
+</fieldset>
+<footer>
+  <div class="footer-content">
+      <h2>Cuartel de Bomberos Zona 4</h2>
+    <h3>Cuando un Hombre se Convierte en Bombero, ha Conseguido su Mayor Acto de Valentia</h3>
+    <ul class="socials">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+    </ul>
+</div>
+</footer>
+</body>
+</html>

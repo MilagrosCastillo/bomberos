@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Menú Principal</title>
+  <style>
+    /* Estilos de reinicio y base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffffff, #d12c2c);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #000;
+      user-select: none;
+      padding: 10px;
+    }
+
+    header {
+      width: 100%;
+      max-width: 600px;
+      background: rgba(255 255 255 / 0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-bottom: 16px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 10px 12px;
+    }
+
+    nav button {
+      background: transparent;
+      border: 2px solid #a81c1c;
+      border-radius: 20px;
+      padding: 10px 16px;
+      font-weight: bold;
+      font-size: 1rem;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+      margin: 6px 5px;
+      user-select: none;
+    }
+
+    nav button:hover,
+    nav button.active {
+      background: #f76565;
+      color: #fcfcfc;
+      border-color: #ffffff;
+      box-shadow: 0 0 10px #ffffff;
+    }
+
+    main {
+      width: 100%;
+      max-width: 600px;
+      background: rgba(255 255 255 / 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      user-select: text;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .content-header {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    /* Estilo de la pagina de certificado de corformidad*/
+    #cert-conformidad-controls {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    #cert-conformidad-controls input[type="search"] {
+      flex-grow: 1;
+      padding: 10px 14px;
+      border-radius: 20px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+      min-width: 150px;
+    }
+
+    #cert-conformidad-controls input[type="search"]:focus {
+      box-shadow: 0 0 8px #f76565;
+    }
+
+    #cert-conformidad-controls button {
+      background-color: transparent;
+      border: 2px solid #a81c1c;
+      color: black;
+      padding: 10px 18px;
+      font-weight: 700;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      min-width: 130px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    #cert-conformidad-controls button:hover {
+      background-color: #f76565;
+    }
+  /* Estilo de la pagina de certificado de riesgo*/
+    #cert-riesgo-controls {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    #cert-riesgo-controls input[type="search"] {
+      flex-grow: 1;
+      padding: 10px 14px;
+      border-radius: 20px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+      min-width: 150px;
+    }
+
+    #cert-riesgo-controls input[type="search"]:focus {
+      box-shadow: 0 0 8px #f76565;
+    }
+
+    #cert-riesgo-controls button {
+      background-color: transparent;
+      border: 2px solid #a81c1c;
+      color: black;
+      padding: 10px 18px;
+      font-weight: 700;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      min-width: 130px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    #cert-riesgo-controls button:hover {
+      background-color: #f76565;
+    }
+/* Estilo y funciones de la pagina de certificado de calamidad*/
+    #cert-calamidad-controls {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    #cert-calamidad-controls input[type="search"] {
+      flex-grow: 1;
+      padding: 10px 14px;
+      border-radius: 20px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+      min-width: 150px;
+    }
+
+    #cert-calamidad-controls input[type="search"]:focus {
+      box-shadow: 0 0 8px #f76565;
+    }
+
+    #cert-calamidad-controls button {
+      background-color: transparent;
+      border: 2px solid #a81c1c;
+      color: black;
+      padding: 10px 18px;
+      font-weight: 700;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      min-width: 130px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    #cert-calamidad-controls button:hover {
+      background-color: #f76565;
+    }
+    /* Estilo y funciones de la pagina de reportes de investigacion*/
+    #rept-investigacion-controls {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    #rept-investigacion-controls input[type="search"] {
+      flex-grow: 1;
+      padding: 10px 14px;
+      border-radius: 20px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+      min-width: 150px;
+    }
+
+    #rept-investigacion-controls input[type="search"]:focus {
+      box-shadow: 0 0 8px #f76565;
+    }
+
+    #rept-investigacion-controls button {
+      background-color: transparent;
+      border: 2px solid #a81c1c;
+      color: black;
+      padding: 10px 18px;
+      font-weight: 700;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      min-width: 130px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    #rept-investigacion-controls button:hover {
+      background-color: #f76565;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 400px) {
+      nav button {
+        min-width: 100px;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+
+      #cert-conformidad-controls {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #cert-conformidad-controls button {
+        width: 100%;
+        min-width: unset;
+      }
+
+      #cert-conformidad-controls input[type="search"] {
+        width: 100%;
+        min-width: unset;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav id="menu">
+      <button type="button" data-section="inicio" class="active">Inicio</button>
+      <button type="button" data-section="certificado-conformidad">Certificado de conformidad</button>
+      <button type="button" data-section="certificado-riesgo">Certificado de riesgo</button>
+      <button type="button" data-section="informe-calamidad">Informe de calamidad publica</button>
+      <button type="button" data-section="reporte-investigacion">Reporte de investigacion</button>
+      <button type="button" data-section="salir">Salir</button>
+    </nav>
+  </header>
+  <main>
+    <div id="content-area">
+      <div id="inicio-content" class="content-section">
+        <h2 class="content-header">Bienvenido a la página de Inicio</h2>
+        <p>Seleccione una opción del menú para continuar.</p>
+      </div>
+
+      <div id="certificado-conformidad-content" class="content-section hidden">
+        <div id="cert-conformidad-controls">
+          <input type="search" id="search-cert" placeholder="Buscar..." aria-label="Buscar certificado de conformidad" />
+          <button id="btn-registrar-nuevo">Registrar nuevo</button>
+        </div>
+        <p>Sección de Certificado de conformidad. Aquí puede buscar y registrar nuevos certificados.</p>
+      </div>
+
+      <div id="certificado-riesgo-content" class="content-section hidden">
+        <div id="cert-riesgo-controls">
+         <input type="search" id="search-cert" placeholder="Buscar..." aria-label="Buscar certificado de riesgo" />
+         <button id="btn-registrar-nuevo">Registrar nuevo</button>
+        </div>
+        <h2 class="content-header">Certificado de riesgo</h2>
+        <p>Contenido relacionado con certificados de riesgo.</p>
+      </div>
+
+      <div id="informe-calamidad-content" class="content-section hidden">
+        <div id="cert-calamidad-controls">
+            <input type="search" id="search-cert" placeholder="Buscar..." aria-label="Buscar certificado de calamidad" />
+            <button id="btn-registrar-nuevo">Registrar nuevo</button>
+        </div>
+        <h2 class="content-header">Informe de calamidad pública</h2>
+        <p>Contenido relacionado con informes de calamidad pública.</p>
+      </div>
+
+      <div id="reporte-investigacion-content" class="content-section hidden">
+        <div id="rept-investigacion-controls">
+            <input type="search" id="search-cert" placeholder="Buscar..." aria-label="Buscar informe de insvestigacion" />
+            <button id="btn-registrar-nuevo">Registrar nuevo</button>
+        </div>
+        <h2 class="content-header">Reporte de investigación</h2>
+        <p>Contenido relacionado con reportes de investigación.</p>
+      </div>
+
+      <div id="salir-content" class="content-section hidden">
+        <h2 class="content-header">Salir</h2>
+        <p>Gracias por usar el sistema. Para salir, cierre la ventana o pestaña.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const contentSections = document.querySelectorAll('.content-section');
+    const buttons = menu.querySelectorAll('button');
+
+    function setActiveSection(section) {
+      // Eliminar la clase activa de todos los botones
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Agregar clase activa al botón en el que se hizo clic
+      const activeBtn = menu.querySelector(`button[data-section="${section}"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // Mostrar/ocultar secciones de contenido segun corresponda
+      contentSections.forEach(sectionDiv => {
+        if (sectionDiv.id === section + '-content') {
+          sectionDiv.classList.remove('hidden');
+        } else {
+          sectionDiv.classList.add('hidden');
+        }
+      });
+    }
+
+    menu.addEventListener('click', e => {
+      if (e.target.tagName === 'BUTTON') {
+        const section = e.target.getAttribute('data-section');
+        setActiveSection(section);
+      }
+    });
+  </script>
+</body>
+</html>
+</content>
+</create_file>
+
+
+

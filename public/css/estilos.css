@@ -1,0 +1,244 @@
+@import url('./iconos/flecha-izquierda.css');
+@import url("iconos/pro/css/all.css");
+
+:root{
+	--fondo: #171717;
+	--menu: #ff0000;
+	--texicon: #fff;
+	--fondoclaro: #FFF;
+}
+html[data-theme='dark'] {
+    --fondo: #FFF;
+}
+/*==== Modo oscuro y claro ====*/
+.oscuro{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	color: var(--texicon);
+	font-size: 16px;
+}
+body{
+	background-color: var(--fondo);
+	color: var(--texicon);
+	margin: unset;
+	font-family: sans-serif;
+	transition: .5s;
+}
+.light-mode{
+	background-color: var(--fondoclaro);
+	color: var(--fondo);
+}
+
+/*=============================*/
+::selection{
+	color: var(--texicon);
+	background-color: var(--menu);
+}
+
+.slogan{
+	color: var(--texicon);
+}
+select{
+	background-color: transparent;
+	border: 1px solid;
+	border-radius: 10px;
+	border-color: var(--menu);
+	color: #ffff;
+	padding: 7px;
+	padding-bottom: 3.5%;
+}
+input{
+	background-color: transparent;
+	border: 1px solid;
+	border-radius: 10px;
+	border-color: var(--menu);
+	color: #ffff;
+	padding: 8px 1px 8px 8px;
+	width: 180px;
+}
+.me-co{
+	background-color: var(--menu);
+}
+/* .menu{ */
+/* 	margin-left: 30%; */
+/* } */
+.me-menu{
+	display: flex;
+	justify-content: center;
+	font-family: sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+	cursor: pointer;
+	overflow: visible;
+	list-style: none;
+	padding:0;
+	width: 100%;
+	max-width: 100%;
+}
+.me-menu li a{
+	text-decoration:none;
+	color: #ffff;
+	padding:20px;
+	display: block;
+}
+.me-menu li a:hover{
+	background-color: #ba0000;
+}
+.me-menu li{
+	display:inline-block;
+	text-align:center;
+}
+.slogan{
+	font-family: sans-serif;
+	font-size: 223%;
+	font-weight:100;
+	line-height: 200%;
+	letter-spacing: 3px;
+	font-style:normal;
+}
+.resumen{
+	background-image:radial-gradient(at left bottom, #171717a6 7%, #1717178a 100%), url(./img/backgrund2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top:7%;
+	width: auto;
+	height: 350px;
+}
+.cuadro{
+		margin-left:5%;
+		margin-bottom: 30%;
+		margin-top: 2.7%;
+		border: 1px solid;
+		border-radius: 7px;
+		padding: 7px;
+		border-color: var(--menu);
+		background-color: var(--fondo);
+}
+.submit{
+	background-color: var(--fondo);
+	cursor: pointer;
+	padding-top:3.5%;
+	padding-left: 7.7%;
+	padding-right: 7.7%;
+	padding-bottom:3.5%;
+	transition: background-color .5s;
+}
+.submit:hover{
+	background-color: var(--menu);
+	transition: ease .5s;
+}
+.texto{
+	display:inline-block;
+	line-height: 30px;
+	width: 70%;
+	height: 350px;
+}
+.row2{
+	display: grid; 
+  	grid-template-columns: 1fr 1fr; 
+  	grid-template-rows: 1fr; 
+  	gap: 0px 0px; 
+  	grid-template-areas: 
+    	"text2 imagen"; 
+}
+.text2{
+	grid-area: text2;
+	margin-left: 2%;
+	line-height: 140%;
+}
+.imagen{
+	grid-area: imagen;
+}
+.imagen3{
+	vertical-align: middle;
+	width: 488px;
+	display:block;
+	margin: auto;
+	padding: 15px;
+}
+.pies{
+	margin: unset;
+	padding: 21px;
+	background-color: var(--menu);
+	color: var(--texicon);
+}
+.login{
+    display: flex;
+    flex: 1;
+    justify-content: end;
+}
+
+/* ========Historia======= */
+.historia{
+	font-family: sans-serif;
+	line-height: 170%;
+	margin-left: 7%;
+	margin-right: 7%;
+}
+.historia p{
+	margin-top: 7%;
+}
+/*========= Historia =======*/
+.historia{
+	font-family: sans-serif;
+	line-height: 170%;
+	margin-left: 7%;
+	margin-right: 7%;
+}
+.historia p{
+	margin-top: 7%;
+	margin-left: 3.5%;
+	margin-right: 3.5%;
+}
+
+/*======= Visión y Misión =======*/
+.histo{
+	margin-left: 2%;
+	margin-right: 2%;
+}
+/* .menu-h{ */
+/* 	margin-left: 43%; */
+/* 	width: fit-content; */
+/* } */
+.me-hi{
+	background-color: var(--menu);
+}
+.re-menu{
+	display: flex;
+	justify-content: center;
+	font-family: sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+	cursor: pointer;
+	overflow: visible;
+	list-style: none;
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+}
+.re-menu li a{
+	text-decoration: none;
+	color: #ffff;
+	padding: 20px;
+	display: flex;
+	transition: background-color 0.35s;
+}
+.re-menu li a:hover{
+	background-color: #ba0000;
+}
+.regresar{
+	display: flex;
+}
+/*======= Organigrama =======*/
+.orgaimg{
+	width: 90%;
+	display:block;
+	margin: auto;
+	padding: 15px;
+}

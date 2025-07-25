@@ -1,0 +1,125 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>FORMULARIO PERSONAL</title>
+        <link rel="stylesheet" href="./style/piedepagina.css">
+        <style>
+        .campo-adicional {
+            display: none; /* Ocultar por defecto */
+            margin-top: 10px;
+        }
+        body {
+            /* URL de la imagen de fondo */
+            background-image: url('./img/Imagen7.png'); /* Cambia 'fondo.jpg' por la ruta de tu imagen */
+            background-size: cover; /* Hace que la imagen cubra todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+            margin: 0; /* Elimina el margen por defecto del body */
+            color: black; /* Cambia el color del texto para mejor contraste */
+           
+           
+        }
+        .infcenter {
+            margin: 30;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <form method="post">
+                <button type="submit" name="boton1">Datos Medicos</button>
+                <button type="submit" name="boton2">Carga Familiar</button>
+                <button type="submit" name="boton3">Credencial</button>
+                <button type="submit" name="salir">Salir</button>
+            </form>
+            <div class="infcenter">
+        <center><h1> REGISTRA DATOS MEDICOS</h1></center>
+
+        <form action="" method="post">
+    
+            <fieldset>
+                <label for="sangre">Grupo Sanguineo</label>
+			<select name="sangre" id="sangre">
+				<option value="sangre">SELECCIONE</option>
+				<option value="sangre">A+</option>
+				<option value="sangre">A-</option>
+				<option value="sangre">B+</option>
+			    <option value="sangre">B-</option>
+				<option value="sangre">AB+</option>
+				<option value="sangre">AB-</option>
+				<option value="sangre">O+</option>
+				<option value="sangre">O-</option>
+			</select><br><br>
+			<label for="disca">Posee Alguna Discapacidad</label>
+			<label for="si1">Sí</label>
+            <input type="radio" id="si1" name="pregunta1" value="si" onclick="mostrarCampos('campoAdicional1')"> 
+            
+            <label for="no1">No</label>
+            <input type="radio" id="no1" name="pregunta1" value="no" onclick="ocultarCampos('campoAdicional1')"> 
+            
+            <div class="campo-adicional" id="campoAdicional1">
+                <label for="info1">Espesifique</label>
+                <input type="text" id="info1" name="info1">
+            </div><br><br>
+    
+
+    <label for="enfermedad">Posee Alguna Enfermedad Patologica</label>
+    <label for="si2">Sí</label>
+            <input type="radio" id="si2" name="pregunta2" value="si" onclick="mostrarCampos('campoAdicional2')"> 
+            
+            <label for="no2">No</label>
+            <input type="radio" id="no2" name="pregunta2" value="no" onclick="ocultarCampos('campoAdicional2')"> 
+            
+            <div class="campo-adicional" id="campoAdicional2">
+                <label for="info2">Especifique</label>
+                <input type="text" id="info2" name="info2">
+            </div>
+            </fieldset><br><br>
+            <fieldset>
+            <legend>DATOS ANTROPOMETRICOS</legend>
+            <label for="tallap">Talla de Pantalon</label>
+            <input type="text" name="tallap" size="5">
+            <label for="tallac">Talla de Camisa</label>
+            <input type="text" name="tallac" size="5">
+            <label for="tallaz">Talla de Zapato</label>
+            <input type="text" name="tallaz" size="5">
+            <label for="tallag">Talla de Gorra</label>
+            <input type="text" name="tallag" size="5">
+            <br><br>
+            </fieldset>
+		  <br><br>
+          <center><input type="submit" name="btn1" value="Guardar"></center>
+        </form>
+    </div>
+    </div>
+        <script>
+            function mostrarCampos(campoId) {
+        document.getElementById(campoId).style.display = 'block'; // Mostrar campo adicional
+    }
+    
+    function ocultarCampos(campoId) {
+        document.getElementById(campoId).style.display = 'none'; // Ocultar campo adicional
+    }
+        </script>
+        <footer>
+            <div class="footer-content">
+                <h2>Cuartel de Bomberos Zona 4</h2>
+                <h3>Cuando un Hombre se Convierte en Bombero, ha Conseguido su Mayor Acto de Valentia</h3>
+                <ul class="socials">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>FORMULARIO PERSONAL</title>
+		<style>
+			.hidden {
+				display: none;
+			}
+			.resultado {
+            margin-top: 20px;
+        }
+		</style>
+    </head>
+    <body>
+
+
+    <center><h1> REGISTRO QUE VA A LLENAR EL ADMINISTRATIVO</h1></center>
+
+    <form action="registro.html" method="post">
+
+        <fieldset>
+            <legend>DATOS PERSONAL</legend>
+           <label for="primer_nombre">Primer Nombre</label>
+			<input type="text" name="nom" size="20">
+			<label for="segundo_nombre">Segundo Nombre</label>
+			<input type="text" name="nom" size="20"><br><br>
+			<label for= "primer_apellido">Primer Apellidos</label>
+			<input type="text" name="ape" size="20">
+			<label for= "segundo_apellido">Segundo Apellidos</label>
+			<input type="text" name="ape" size="20"><br><br>
+			<label for="cedula">Cedula</label>
+			<input type="tel" name="cedula" size="10">
+			<label for="fecha_nacimiento">Fecha Nacimiento</label>
+			<input type="date" name="fnto" size="10"> 
+			<label for="edad">Edad</label>
+			<input type="text" name="edad" size="2">
+			<label for="mper">Masculino</label>
+        <input type="radio" id="masculino" name="genero" value="masculino" onclick="actualizarSeleccion('masculino')">
+        <label for="fper">Femenino</label>
+        <input type="radio" id="femenino" name="genero" value="femenino" onclick="actualizarSeleccion('femenino')"><br><br>
+            <label for="estado_civil">Estado Civil</label>
+			<select name="edoci" id="edoci">
+			<option value="edoci">SELECCIONE</option>
+			<option value="edoci">CASADO(A)</option>
+			<option value="edoci">CONCUBINO(A)</option>
+			<option value="edoci">SOLTERO(A)</option>
+			<option value="edoci">VIUDO(A)</option>
+			</select>
+			<label for="nacionalidad">Nacionalidad</label>
+			<select name="nacionali" id="nacionali">
+			<option value="nacionali">SELECCIONE</option>
+			<option value="nacionali">VENEZOLANO(A)</option>
+			<option value="nacionali">EXTRANJERO</option>
+			</select>
+			<label for="telefono">Tlf</label>
+			<input type="text" name="tlf" size="10">
+			<label for="telefono_fijo">Tlf Fijo</label>
+			<input type="tlfca" name="tlfca" size="10"><br><br>
+			<label for="email">Email</label>
+			<input type="text" name="email" size="15">
+			<label for="direccion">Direccion</label>
+			<input type="text" name="direc" size="40"><br><br>
+            <label for="tipo_personal">Tipo de Personal</label>
+            <select><option value="">SELECCIONE</option>
+				<option value="uni_adm">UNIFORMADO ADMINISTRATIVO</option>
+                <option value="uni_oper">UNIFORMADO OPERATIVO</option>
+				<option value="civil_adm">CIVIL ADMINISTRATIVO</option>
+				<option value="civil_oper">CIVIL OPERATIVO</option>
+            </select>
+			<label for="estatus">Estatus</label>
+			<select id="estado" name="estado" onchange="mostrarCampoFecha()">
+				<option value="">SELECCIONE</option>
+				<option value="activo">ACTIVO</option>
+				<option value="jubilado">JUBILADO</option>
+				<option value="vacaciones">VACACIONES</option>
+			</select> 
+			<div id="campoFecha" class="hidden">
+				<label for="fecha">Ingrese la fecha:</label>
+				<input type="date" id="fecha" name="fecha">
+			</div>
+           
+                <br><br>
+        </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>DATOS LABORAL</legend>
+               <label for="nivel_academico">Nivel Academico</label>
+               <select name="nivelac" id="nivelac">
+               <option value="nivelac">SELECCIONE</option>
+               <option value="nivelac">PRIMARIA</option>
+               <option value="nivelac">BACHILLER</option>
+               <option value="nivelac">T.S.U</option>
+               <option value="nivelac">UNIVERSITARIO(A)</option>
+               <option value="nivelac">MAGISTER</option>
+               </select>
+               <label for="jerarquia">Jerarquia</label>
+               <select name="jerar" id="jerar">
+               <option value="cargo">SELECCION</option>
+               <option value="jerar">CIVIL</option>
+               </select>
+               <label for="cargo">Cargo</label>
+               <select name="cargo" id="cargo">
+               <option value="cargo">SELECCIONE</option>	
+               <option value="cargo">MAQUINISTA</option>
+               <option value="cargo">MEDICO</option>
+               <option value="cargo">ASESOR JURIDICO</option>
+               <option value="cargo">ABIENTALISTA</option>
+               </select><br><br>
+               <label for="estacion_servicio">Estacion de servicio</label>
+               <select name="estacion" id="estacio">
+               <option value="estacion">SELECCIONE</option>
+               <option value="estacion">SABANA DE MENDOZA</option>
+               <option value="estacion">BUENA VISTA</option>
+               <option value="estacion">MONTE CARMELO</option>
+               </select>
+           </select>
+          
+           <label for="seccion">Seccion</label>
+			<select name="seccion" id="seccion">
+			<option value="seccion">SELECCIONE</option>
+			<option value="seccion">A</option>
+			<option value="seccion">B</option>
+			<option value="seccion">C</option>
+			<option value="seccion">NINGUNA</option>
+			</select>
+			<label for="rif">RIF</label>
+			<input type="text" name="rif" size="8"><br><br>
+			<label for="serial_carnet">Serial del Carnet de la Patria</label>
+			<input type="text" name="scarpa" size="8">
+			<label for="codigo_carnet">Codigo del Carnet de la Patria</label>
+			<input type="text" name="ccarpa" size="8">
+			<br><br>
+          </fieldset><br><br>
+          <center><input type="submit" name="btn1" value="Guardar"></center>
+    </form>
+	<div class="resultado" id="resultado"></div>
+
+    <script>
+        function actualizarSeleccion(seleccionado) {
+            const masculino = document.getElementById('masculino');
+            const femenino = document.getElementById('femenino');
+
+            if (seleccionado === 'femenino') {
+                masculino.checked = false; // Desmarcar masculino
+            } else if (seleccionado === 'masculino') {
+                femenino.checked = false; // Desmarcar femenino
+            }
+
+            mostrarResultado();
+        }
+
+        function mostrarResultado() {
+            const resultadoDiv = document.getElementById('resultado');
+            const generoSeleccionado = document.querySelector('input[name="genero"]:checked');
+
+            if (generoSeleccionado) {
+                resultadoDiv.textContent = Has seleccionado:${generoSeleccionado.value.charAt(0).toUpperCase() + generoSeleccionado.value.slice(1)};
+            } else {
+                resultadoDiv.textContent = 'No has seleccionado ningún género.';
+            }
+        }
+    </script>
+	<script>
+        function mostrarCampoFecha() {
+            const estado = document.getElementById('estado').value;
+            const campoFecha = document.getElementById('campoFecha');
+
+            if (estado === 'activo') {
+                campoFecha.querySelector('label').innerText = 'Ingrese la fecha de ingreso';
+                campoFecha.classList.remove('hidden');
+            } else if (estado === 'jubilado') {
+                campoFecha.querySelector('label').innerText = 'Ingrese la fecha de jubilación:';
+                campoFecha.classList.remove('hidden');
+            } else if (estado === 'vacaciones') {
+                campoFecha.querySelector('label').innerText = 'Ingrese la fecha de vacaciones:';
+                campoFecha.classList.remove('hidden');
+            } else {
+                campoFecha.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
