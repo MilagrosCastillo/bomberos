@@ -21,31 +21,78 @@ $nivelacademico = strtoupper($_POST['nivelacademico']);
 $tipoPersonal = strtoupper($_POST['tipoPersonal']);
 $jerarquia = strtoupper($_POST['jerarquia']);
 
-$cargo2 = strtoupper($_POST['cargo2']);
+$cargoLaboral = strtoupper($_POST['cargoLaboral']);
 $estatus = strtoupper($_POST['estatus']);
 $estacionservicio = strtoupper($_POST['estacionservicio']);
-
+$fecha = $_POST['fecha'];
 $seccion = strtoupper($_POST['seccion']);
 $rif = strtoupper($_POST['rif']);
 $serialcarnet = strtoupper($_POST['serialcarnet']);
 $codigocarnet = strtoupper($_POST['codigocarnet']);
 
 
-$consulta0 = "INSERT INTO fireguard_dates (cedula,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,fecha_nacimiento,sexo,
-estado_civil,nacionalidad,telefono,telefono_fijo,email,direccion) 
-VALUES ('$cedula','$nombre1','$nombre2','$apellido1','$apellido2','$fn','$sexo','$estadocivil','$nacionalidad','$tlfm','$tlffijo',
-'$correo','$direccion')";
+$consulta0 = "INSERT INTO fireguard_dates (
+    cedula,
+    primer_nombre,
+    segundo_nombre,
+    primer_apellido,
+    segundo_apellido,
+    fecha_nacimiento,
+    sexo,
+    estado_civil,
+    nacionalidad,
+    telefono,
+    telefono_fijo,
+    email,direccion
+) VALUES (
+    '$cedula',
+    '$nombre1',
+    '$nombre2',
+    '$apellido1',
+    '$apellido2',
+    '$fn',
+    '$sexo',
+    '$estadocivil',
+    '$nacionalidad',
+    '$tlfm',
+    '$tlffijo',
+    '$correo',
+    '$direccion'
+)";
 $resultado0 = $mysqli -> query($consulta0);
 
-$consulta1 = "INSERT INTO dlaboral (cedula,nivel_academico,tipo_personal,jerarquia,cargo,estatus,estacion_servicio,seccion,
-rif,serial_carnet,codigo_carnet) 
-VALUES ('$cedula','$nivelacademico','$tipoPersonal','$jerarquia','$cargo2','$estatus','$estacionservicio','$seccion',
-'$rif','$serialcarnet','$codigocarnet')";
+$consulta1 = "INSERT INTO dlaboral (
+    cedula,
+    nivel_academico,
+    tipo_personal,
+    jerarquia,
+    cargo,
+    estatus,
+    fecha,
+    estacion_servicio,
+    seccion,
+    rif,
+    serial_carnet,
+    codigo_carnet
+) VALUES (
+    '$cedula',
+    '$nivelacademico',
+    '$tipoPersonal',
+    '$jerarquia',
+    '$cargoLaboral',
+    '$estatus',
+    '$fecha',
+    '$estacionservicio',
+    '$seccion',
+    '$rif',
+    '$serialcarnet',
+    '$codigocarnet'
+)";
 $resultado1 = $mysqli -> query($consulta1);
 
-$consulta2 = "INSERT INTO usersadmin (nombre,apellido,cedula,usuario,pass,cargo) VALUES ('$nombre1','$apellido1','$cedula',
-'$correo','$cedula','$cargo')";
-$resultado2 = $mysqli -> query($consulta2);
+// $consulta2 = "INSERT INTO usersadmin (nombre,apellido,cedula,usuario,pass,cargo) VALUES ('$nombre1','$apellido1','$cedula',
+// '$correo','$cedula','$cargo')";
+// $resultado2 = $mysqli -> query($consulta2);
 
 if($resultado1){
     header('location:agregar.php?errorini=1');

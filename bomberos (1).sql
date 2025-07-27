@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 -- Base de datos: `bomberos`
 --
 
+create database bomberos;
+use bomberos;
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +177,8 @@ INSERT INTO `usersadmin` (`id`, `nombre`, `apellido`, `cedula`, `usuario`, `pass
 --
 -- Índices para tablas volcadas
 --
+ALTER TABLE `dlaboral`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `dsalud`
@@ -225,3 +230,7 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+select * from dlaboral;
