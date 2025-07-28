@@ -40,7 +40,7 @@
                             <li><a href="<?= BASE_URL ?>resources/views/docente.php" class="lists">Departamento Docente</a></li>
                         </ul>
                     <li class="menu-despl"><a href="<?= BASE_URL ?>resources/views/organigrama.php" class="sp"><i class="fa-solid fa-diagram-project mr-1"></i>Organigrama</a></li>
-                    <li class="font-semibold sp"><a href="<?= BASE_URL ?>resources/views/auth/admin-login.php"><i class="fas fa-sign-in-alt mr-1"></i>Iniciar Sesión</a></li>
+                    <li class="font-semibold"><a href="<?= BASE_URL ?>resources/views/auth/admin-login.php" class="sp"><i class="fas fa-sign-in-alt mr-1"></i>Iniciar Sesión</a></li>
                 </ul>
             </div>
             <div class="logi">

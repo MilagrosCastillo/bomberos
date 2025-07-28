@@ -62,7 +62,6 @@ $consulta0 = "INSERT INTO fireguard_dates (
 $resultado0 = $mysqli -> query($consulta0);
 
 $consulta1 = "INSERT INTO dlaboral (
-    cedula,
     nivel_academico,
     tipo_personal,
     jerarquia,
@@ -73,9 +72,9 @@ $consulta1 = "INSERT INTO dlaboral (
     seccion,
     rif,
     serial_carnet,
-    codigo_carnet
+    codigo_carnet,
+    fireguard_dates_cedula
 ) VALUES (
-    '$cedula',
     '$nivelacademico',
     '$tipoPersonal',
     '$jerarquia',
@@ -86,7 +85,8 @@ $consulta1 = "INSERT INTO dlaboral (
     '$seccion',
     '$rif',
     '$serialcarnet',
-    '$codigocarnet'
+    '$codigocarnet',
+    '$cedula'
 )";
 $resultado1 = $mysqli -> query($consulta1);
 
