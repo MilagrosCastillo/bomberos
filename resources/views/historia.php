@@ -5,7 +5,7 @@ require dirname(__DIR__, 2) . '/resources/views/components/home.php';
 <link rel="stylesheet" href="<?php echo BASE_URL . 'public/css/estilohist.css';?>">
 <section class="historia px-10">
     <center>
-      <h2 class="text-2xl font-bold text-red-300 py-3">Historia</h2>
+      <h2 class="text-2xl font-bold text-black-300 py-3">Historia</h2>
       <hr>
       <p class="my-6">Bajo el lema disciplina, aplicación y lealtad el cuartel de Bomberos Coronel (B)
            “Alipio Atilano Ramírez” Nace durante los años 1978-1979 cuando comienzan a realizarse
@@ -60,6 +60,4 @@ require dirname(__DIR__, 2) . '/resources/views/components/home.php';
                       de mayor.</p>
     </center>
   </section>  
-<?php
-require dirname(__DIR__, 2) . 'resources/views/components/home-end.php';
-?> 
+

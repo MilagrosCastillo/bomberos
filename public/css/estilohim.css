@@ -16,4 +16,23 @@ body {
   margin: 0; /* Elimina el margen por defecto del body */
   color: black; /* Cambia el color del texto para mejor contraste */
 }
+.container {
+  display: flex;
+  justify-content: space-between; /* Espacio entre los divs */
+  padding: 20px; /* Espaciado interno */
+}
+.right {
+padding: 20px;
+width: 45%;
+}
+.fixed-image {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 100px;
+	height: auto;
+	border: 2px solid #ddd;
+	border-radius: 4px;
+}
+
 

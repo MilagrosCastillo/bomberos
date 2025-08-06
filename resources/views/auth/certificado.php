@@ -30,7 +30,7 @@ require dirname(__DIR__, 3) . '/resources/views/components/menu-prevencion.php';
                     </div>
                     
                     <div class="form-group">
-                        <label for="localName" class="block text-sm font-medium text-gray-700 mb-1">Nombre del local</label>
+                        <label for="localBame" class="block text-sm font-medium text-gray-700 mb-1">Nombre del local</label>
                         <input type="text" id="localName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
                     </div>
                 </div>

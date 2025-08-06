@@ -277,6 +277,7 @@
                                 <option value="T.S.U">T.S.U</option>
                                 <option value="UNIVERSITARIO(A)">UNIVERSITARIO(A)</option>
                                 <option value="MAGISTER">MAGISTER</option>
+                                <option value="DOCTORADO">DOCTORADO</option>
                             </select>
                         </div>
 

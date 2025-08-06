@@ -3,14 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-07-2025 a las 21:54:41
+-- Tiempo de generación: 06-08-2025 a las 16:57:04
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
-drop database bomberos;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "-04:00";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -22,37 +21,14 @@ SET time_zone = "-04:00";
 -- Base de datos: `bomberos`
 --
 
-create database bomberos;
-use bomberos;
-
 -- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `fireguard_dates`
---
-
-CREATE TABLE `fireguard_dates` (
-  `cedula` int(11) NOT NULL primary key,
-  `primer_nombre` varchar(50) NOT NULL,
-  `segundo_nombre` varchar(50) DEFAULT NULL,
-  `primer_apellido` varchar(50) NOT NULL,
-  `segundo_apellido` varchar(50) DEFAULT NULL,
-  `fecha_nacimiento` date NOT NULL,
-  `sexo` char(1) NOT NULL,
-  `estado_civil` varchar(20) NOT NULL,
-  `nacionalidad` varchar(50) NOT NULL,
-  `telefono` varchar(15) NOT NULL,
-  `telefono_fijo` varchar(15) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `direccion` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Estructura de tabla para la tabla `dlaboral`
 --
 
 CREATE TABLE `dlaboral` (
-  `id` int(20) NOT NULL auto_increment primary key,
+  `cedula` int(20) NOT NULL,
   `nivel_academico` varchar(30) NOT NULL,
   `tipo_personal` varchar(30) NOT NULL,
   `jerarquia` varchar(30) NOT NULL,
@@ -63,34 +39,19 @@ CREATE TABLE `dlaboral` (
   `seccion` varchar(30) NOT NULL,
   `rif` varchar(30) NOT NULL,
   `serial_carnet` varchar(30) NOT NULL,
-  `codigo_carnet` varchar(30) NOT NULL,
-  `fireguard_dates_cedula` int,
-  foreign key (fireguard_dates_cedula) references fireguard_dates(cedula) on update cascade on delete cascade
+  `codigo_carnet` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-
---
--- Volcado de datos para la tabla `fireguard_dates`
---
-
-INSERT INTO `fireguard_dates` (`cedula`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `fecha_nacimiento`, `sexo`, `estado_civil`, `nacionalidad`, `telefono`, `telefono_fijo`, `email`, `direccion`) VALUES
-(11200300, 'ROBERTO', 'ANDRES', 'UZCATEGUI', 'RODRIGUEZ', '1998-06-17', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04122071023', '', 'ROBERTO01@GMAIL.COM', 'SABANA DE MENDOZA'),
-(22100300, 'LUIS', 'ANTONIO', 'RODRIGUEZ', 'CARRILLO', '2012-08-08', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04123006564', '', 'LUIS04@GMAIL.COM', 'DIVIDIVE MUNICIPIO MIRANDA'),
-(30272820, 'MARIANT', 'NATHALY', 'GONZALEZ', 'CASTELLANOS', '2003-05-10', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04122075023', '', 'MARIANTG1005@GMAIL.COM', 'DIVIDIVE'),
-(31040100, 'KATHERIN', 'ALEJANDRA ', 'CARRILLO', 'DIAZ', '2004-01-18', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04269564970', '', 'DIAZKATHERIN_754@GMAIL.COM', 'MIRANDA');
-
--- --------------------------------------------------------
-
 
 --
 -- Volcado de datos para la tabla `dlaboral`
 --
 
-INSERT INTO `dlaboral` (`nivel_academico`, `tipo_personal`, `jerarquia`, `cargo`, `estatus`, `fecha`, `estacion_servicio`, `seccion`, `rif`, `serial_carnet`, `codigo_carnet`, `fireguard_dates_cedula`) VALUES
-('NIVEL_ACADEMICO', 'UNIFORMADO_OPERATIVO', 'MAYOR', 'ASESOR_JURIDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J31040100', '21254844', '21565648', 11200300),
-('NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'MAYOR', 'MAQUINISTA', 'JUBILADO', '0000-00-00', 'ESTACION', 'SECCION', 'J30272820', '00483684226', '00486259966', 22100300),
-('NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'SARGENTO 1ERO', 'ASESOR_JURIDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J11200300', '0012131566', '00055663333', 30272820),
-('NIVEL_ACADEMICO', 'UNIFORMADO_OPERATIVO', '1ER. TENIENTE', 'MEDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J22100300', '002256', '655654225', 31040100);
+INSERT INTO `dlaboral` (`cedula`, `nivel_academico`, `tipo_personal`, `jerarquia`, `cargo`, `estatus`, `fecha`, `estacion_servicio`, `seccion`, `rif`, `serial_carnet`, `codigo_carnet`) VALUES
+(31040100, 'NIVEL_ACADEMICO', 'UNIFORMADO_OPERATIVO', 'MAYOR', 'ASESOR_JURIDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J31040100', '21254844', '21565648'),
+(30272820, 'NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'MAYOR', 'MAQUINISTA', 'JUBILADO', '0000-00-00', 'ESTACION', 'SECCION', 'J30272820', '00483684226', '00486259966'),
+(11200300, 'NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'SARGENTO 1ERO', 'ASESOR_JURIDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J11200300', '0012131566', '00055663333'),
+(22100300, 'NIVEL_ACADEMICO', 'UNIFORMADO_OPERATIVO', '1ER. TENIENTE', 'MEDICO', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', 'J22100300', '002256', '655654225'),
+(12356896, 'NIVEL_ACADEMICO', 'UNIFORMADO_ADMINISTRATIVO', 'TENIENTE', '', 'ACTIVO', '0000-00-00', 'ESTACION', 'SECCION', '225788866211', '00066565522233', '0114400022');
 
 -- --------------------------------------------------------
 
@@ -155,6 +116,58 @@ INSERT INTO `famila` (`id`, `uni_cedula`, `nombre`, `nacimiento`, `cedula`, `sex
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `fireguard_dates`
+--
+
+CREATE TABLE `fireguard_dates` (
+  `cedula` int(11) NOT NULL,
+  `primer_nombre` varchar(50) NOT NULL,
+  `segundo_nombre` varchar(50) DEFAULT NULL,
+  `primer_apellido` varchar(50) NOT NULL,
+  `segundo_apellido` varchar(50) DEFAULT NULL,
+  `fecha_nacimiento` date NOT NULL,
+  `sexo` char(1) NOT NULL,
+  `estado_civil` varchar(20) NOT NULL,
+  `nacionalidad` varchar(50) NOT NULL,
+  `telefono` varchar(15) NOT NULL,
+  `telefono_fijo` varchar(15) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `direccion` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `fireguard_dates`
+--
+
+INSERT INTO `fireguard_dates` (`cedula`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `fecha_nacimiento`, `sexo`, `estado_civil`, `nacionalidad`, `telefono`, `telefono_fijo`, `email`, `direccion`) VALUES
+(11200300, 'ROBERTO', 'ANDRES', 'UZCATEGUI', 'RODRIGUEZ', '1998-06-17', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04122071023', '', 'ROBERTO01@GMAIL.COM', 'SABANA DE MENDOZA'),
+(12356896, 'MARIA', 'ANTONIETA', 'RAMIREZ', 'GONZALEZ', '1989-07-19', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04243252123', '', 'MARIA@GMAIL.COM', 'DIVIDIVE MUNICIPIO MIRANDA'),
+(22100300, 'LUIS', 'ANTONIO', 'RODRIGUEZ', 'CARRILLO', '2012-08-08', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04123006564', '', 'LUIS04@GMAIL.COM', 'DIVIDIVE MUNICIPIO MIRANDA'),
+(30272820, 'MARIANT', 'NATHALY', 'GONZALEZ', 'CASTELLANOS', '2003-05-10', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04122075023', '', 'MARIANTG1005@GMAIL.COM', 'DIVIDIVE'),
+(31040100, 'KATHERIN', 'ALEJANDRA ', 'CARRILLO', 'DIAZ', '2004-01-18', 'S', 'ESTADO_CIVIL', 'VENEZOLANO', '04269564970', '', 'DIAZKATHERIN_754@GMAIL.COM', 'MIRANDA');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prevencion`
+--
+
+CREATE TABLE `prevencion` (
+  `ncertificado` varchar(10) NOT NULL,
+  `nomlocal` varchar(10) NOT NULL,
+  `tipo` varchar(10) NOT NULL,
+  `prefijo` varchar(5) NOT NULL,
+  `numero` varchar(10) NOT NULL,
+  `direlocal` varchar(50) NOT NULL,
+  `numlocal` varchar(10) NOT NULL,
+  `estado` varchar(50) NOT NULL,
+  `municipio` varchar(50) NOT NULL,
+  `parroquia` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usersadmin`
 --
 
@@ -177,7 +190,8 @@ INSERT INTO `usersadmin` (`id`, `nombre`, `apellido`, `cedula`, `usuario`, `pass
 (4, 'KATHERIN', 'CARRILLO', '31040100', 'DIAZKATHERIN_754@GMAIL.COM', '1234', 'PERSONAL'),
 (5, 'MARIANT', 'GONZALEZ', '30272820', 'MARIANTG1005@GMAIL.COM', '1234', 'PREVENCION'),
 (6, 'ROBERTO', 'UZCATEGUI', '11200300', 'ROBERTO01@GMAIL.COM', '11200300', 'PERSONAL'),
-(7, 'LUIS', 'RODRIGUEZ', '22100300', 'LUIS04@GMAIL.COM', '22100300', 'PREVENCION');
+(7, 'LUIS', 'RODRIGUEZ', '22100300', 'LUIS04@GMAIL.COM', '22100300', 'PREVENCION'),
+(8, 'MARIA', 'RAMIREZ', '12356896', 'MARIA@GMAIL.COM', '12356896', '');
 
 --
 -- Índices para tablas volcadas
@@ -198,6 +212,8 @@ ALTER TABLE `famila`
 --
 -- Indices de la tabla `fireguard_dates`
 --
+ALTER TABLE `fireguard_dates`
+  ADD PRIMARY KEY (`cedula`);
 
 --
 -- Indices de la tabla `usersadmin`
@@ -225,13 +241,9 @@ ALTER TABLE `famila`
 -- AUTO_INCREMENT de la tabla `usersadmin`
 --
 ALTER TABLE `usersadmin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-select * from fireguard_dates inner join dlaboral where cedula = '31040100' and fireguard_dates_cedula = '31040100';
